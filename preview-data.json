@@ -1,0 +1,560 @@
+{
+  "schema_version": "public-preview.v1",
+  "captured_at": "2026-11-04T22:18:36.795113+00:00",
+  "indicator": {
+    "id": "preview-6-1-1",
+    "external_forge_id": "6.1.1",
+    "indicator_code": "6.1.1",
+    "name": "Buildings in areas impacted by wildfire",
+    "definition": "Context for building exposure to historical burned areas. Exposure intersections, confirmed damage and future risk are distinct measures.",
+    "theme": "Adaptation and Resilience",
+    "report_section": "Adaptation and Resilience",
+    "current_results": {},
+    "is_demo": false,
+    "is_active": true,
+    "source_metadata": {
+      "kind": "public_preview"
+    }
+  },
+  "records": [
+    {
+      "title": "Portugal study shows building-data choice changes WUI delineation",
+      "summary": "A mainland Portugal comparison evaluates official residential records, Microsoft building footprints and World Settlement Footprint for wildland–urban interface mapping. Results differ substantially across input frames.",
+      "what_happened": null,
+      "where_happened": null,
+      "when_happened": null,
+      "who_published": "Scientific Reports · study authors",
+      "who_involved": [],
+      "who_affected": [],
+      "why_it_matters": null,
+      "why_relevant": "Supports explicit building-source selection and denominator checks before interpreting 6.1.1. WUI delineation is a related exposure context.",
+      "country": "Portugal",
+      "region": "Europe",
+      "organizations": [],
+      "evidence_type": "Institutional publication",
+      "context_category": "Major publications / datasets",
+      "case_study": null,
+      "source_type": "Academic",
+      "publication_date": "2026-05-21",
+      "primary_source_url": "https://www.nature.com/articles/s41598-026-53590-5",
+      "supporting_source_urls": [],
+      "supporting_passages": [
+        "only 46% of the total WUI area being identified by all three datasets"
+      ],
+      "missing_fields": [],
+      "id": "preview-6-1-1-08",
+      "indicator_id": "preview-6-1-1",
+      "publisher": "Scientific Reports · study authors",
+      "source_url": "https://www.nature.com/articles/s41598-026-53590-5",
+      "source_access": "retrieved",
+      "quality_label": "B",
+      "review_status": "NEW",
+      "reviewer_id": null,
+      "reviewed_at": null,
+      "is_demo": false,
+      "category_inferred": false,
+      "duplicate_group": null,
+      "created_at": "2026-11-04T22:18:36.795113+00:00",
+      "model_version": "curated-source preview",
+      "prompt_version": "public-preview.v1",
+      "review_history": [],
+      "validation_warnings": [
+        {
+          "code": "PREVIEW",
+          "severity": "info",
+          "message": "Public-source preview snapshot. Human review is pending."
+        },
+        {
+          "code": "MEASUREMENT_BOUNDARY",
+          "severity": "warning",
+          "message": "The reported comparison concerns WUI area and building datasets, not a national 6.1.1 exposure value or confirmed damage. The study’s historical fire perimeters cover 2000–2023."
+        }
+      ],
+      "key_statistics": [
+        {
+          "value": "46",
+          "unit": "%",
+          "statistic_text": "WUI area identified by all three compared building datasets",
+          "measure": "WUI area identified by all three compared building datasets",
+          "reference_period": "Study comparison; historical fire perimeters 2000–2023",
+          "geography": "Mainland Portugal",
+          "source_quote": "only 46% of the total WUI area being identified by all three datasets",
+          "id": "preview-6-1-1-08-stat-1",
+          "source_url": "https://www.nature.com/articles/s41598-026-53590-5",
+          "verification_status": "source_supported"
+        }
+      ]
+    },
+    {
+      "title": "GABAM v3 publishes annual burned-area maps for 2014–2024",
+      "summary": "The dataset authors release Landsat-derived annual burned-area maps as geographic tiles at 0.00025-degree spacing, described as approximately 30 metres. Version v3 includes a GABAM2024 archive.",
+      "what_happened": null,
+      "where_happened": null,
+      "when_happened": "Version v3 published 17 December 2025; annual coverage 2014–2024",
+      "who_published": "Aerospace Information Research Institute, Chinese Academy of Sciences · Zenodo",
+      "who_involved": [],
+      "who_affected": [],
+      "why_it_matters": null,
+      "why_relevant": "A directly relevant candidate burned-area source for 6.1.1. The inspected publication documents the product; raster bytes were not downloaded or validated in this intake.",
+      "country": null,
+      "region": "Global",
+      "organizations": [],
+      "evidence_type": "Institutional publication",
+      "context_category": "Major publications / datasets",
+      "case_study": null,
+      "source_type": "Research institution",
+      "publication_date": "2025-12-17",
+      "primary_source_url": "https://zenodo.org/records/17707433",
+      "supporting_source_urls": [],
+      "supporting_passages": [
+        "0.00025° (approximately 30 meters) resolution"
+      ],
+      "missing_fields": [],
+      "id": "preview-6-1-1-07",
+      "indicator_id": "preview-6-1-1",
+      "publisher": "Aerospace Information Research Institute, Chinese Academy of Sciences · Zenodo",
+      "source_url": "https://zenodo.org/records/17707433",
+      "source_access": "retrieved",
+      "quality_label": "B",
+      "review_status": "NEW",
+      "reviewer_id": null,
+      "reviewed_at": null,
+      "is_demo": false,
+      "category_inferred": false,
+      "duplicate_group": null,
+      "created_at": "2026-11-04T22:18:36.795113+00:00",
+      "model_version": "curated-source preview",
+      "prompt_version": "public-preview.v1",
+      "review_history": [],
+      "validation_warnings": [
+        {
+          "code": "PREVIEW",
+          "severity": "info",
+          "message": "Public-source preview snapshot. Human review is pending."
+        },
+        {
+          "code": "MEASUREMENT_BOUNDARY",
+          "severity": "warning",
+          "message": "Angular grid spacing varies in ground distance with latitude. Burned pixels do not alone establish wildfire attribution, building damage, future probability or observation completeness."
+        }
+      ],
+      "key_statistics": []
+    },
+    {
+      "title": "GHS-OBAT R2024A: a candidate building frame with mixed data vintages",
+      "summary": "JRC’s building attribute table supplies country-grouped records, centroid coordinates and identifiers linked to Overture’s July 2024 release, with building characteristics derived from GHSL data.",
+      "what_happened": null,
+      "where_happened": null,
+      "when_happened": "Issued 16 December 2024; 2020 reference attributes and 2024 Overture identifiers",
+      "who_published": "European Commission · Joint Research Centre",
+      "who_involved": [],
+      "who_affected": [],
+      "why_it_matters": null,
+      "why_relevant": "Directly relevant to the building-record frame used in 6.1.1’s current research card. Metadata and representative points require checks before spatial overlay.",
+      "country": null,
+      "region": "Global",
+      "organizations": [],
+      "evidence_type": "Institutional publication",
+      "context_category": "Major publications / datasets",
+      "case_study": null,
+      "source_type": "Government",
+      "publication_date": "2024-12-16",
+      "primary_source_url": "https://data.jrc.ec.europa.eu/dataset/f41a22f1-5741-4c41-86eb-6384654f6927",
+      "supporting_source_urls": [],
+      "supporting_passages": [
+        "unique identifiers to link to Overture buildings 2024-07-22.0"
+      ],
+      "missing_fields": [],
+      "id": "preview-6-1-1-06",
+      "indicator_id": "preview-6-1-1",
+      "publisher": "European Commission · Joint Research Centre",
+      "source_url": "https://data.jrc.ec.europa.eu/dataset/f41a22f1-5741-4c41-86eb-6384654f6927",
+      "source_access": "retrieved",
+      "quality_label": "A",
+      "review_status": "NEW",
+      "reviewer_id": null,
+      "reviewed_at": null,
+      "is_demo": false,
+      "category_inferred": false,
+      "duplicate_group": null,
+      "created_at": "2026-11-04T22:18:36.795113+00:00",
+      "model_version": "curated-source preview",
+      "prompt_version": "public-preview.v1",
+      "review_history": [],
+      "validation_warnings": [
+        {
+          "code": "PREVIEW",
+          "severity": "info",
+          "message": "Public-source preview snapshot. Human review is pending."
+        },
+        {
+          "code": "MEASUREMENT_BOUNDARY",
+          "severity": "warning",
+          "message": "Release label, geometry source vintage and reference-year attributes differ. Dataset documentation does not establish complete national building coverage, authenticate local files or provide burned-area exposure results."
+        }
+      ],
+      "key_statistics": []
+    },
+    {
+      "title": "Camp Fire case: temporary refuge areas as an evacuation contingency",
+      "summary": "NIST researchers reconstructed evacuation during the 2018 Camp Fire in Butte County. Their case study reports outcomes from improvised temporary refuge areas when evacuation routes became unsafe.",
+      "what_happened": null,
+      "where_happened": "Butte County, California, United States",
+      "when_happened": "Camp Fire, November 2018; study published August 2026",
+      "who_published": "NIST · Eric Link and Alexander Maranghides",
+      "who_involved": [],
+      "who_affected": [],
+      "why_it_matters": null,
+      "why_relevant": "Shows a documented adaptation response in fire-affected communities and the practical need to locate exposed settlements.",
+      "country": "United States",
+      "region": "California",
+      "organizations": [],
+      "evidence_type": "Case study",
+      "context_category": "Case studies",
+      "case_study": {
+        "intervention": "Temporary fire refuge areas as evacuation contingencies.",
+        "implementation": "Ad hoc refuges were used when fire blocked evacuation routes.",
+        "implementers": [
+          "Emergency responders and evacuees"
+        ],
+        "result": "The authors attribute saved lives and reduced exposure to the temporary refuges.",
+        "measurable_result": "31 refuge areas; at least 261 civilian lives saved, as reported by the study.",
+        "usefulness": "A documented contingency for evacuation planning in fire-affected communities.",
+        "evidence_quotes": [
+          "The ad hoc use of 31 temporary refuge areas saved at least 261 civilian lives"
+        ]
+      },
+      "source_type": "Research institution",
+      "publication_date": "2026-08-20",
+      "primary_source_url": "https://www.nist.gov/publications/lessons-learned-community-scale-use-temporary-refuge-areas-during-camp-fire",
+      "supporting_source_urls": [],
+      "supporting_passages": [
+        "The ad hoc use of 31 temporary refuge areas saved at least 261 civilian lives"
+      ],
+      "missing_fields": [],
+      "id": "preview-6-1-1-05",
+      "indicator_id": "preview-6-1-1",
+      "publisher": "NIST · Eric Link and Alexander Maranghides",
+      "source_url": "https://www.nist.gov/publications/lessons-learned-community-scale-use-temporary-refuge-areas-during-camp-fire",
+      "source_access": "retrieved",
+      "quality_label": "B",
+      "review_status": "NEW",
+      "reviewer_id": null,
+      "reviewed_at": null,
+      "is_demo": false,
+      "category_inferred": false,
+      "duplicate_group": null,
+      "created_at": "2026-11-04T22:18:36.795113+00:00",
+      "model_version": "curated-source preview",
+      "prompt_version": "public-preview.v1",
+      "review_history": [],
+      "validation_warnings": [
+        {
+          "code": "PREVIEW",
+          "severity": "info",
+          "message": "Public-source preview snapshot. Human review is pending."
+        },
+        {
+          "code": "MEASUREMENT_BOUNDARY",
+          "severity": "warning",
+          "message": "This retrospective evacuation case concerns people’s safety. Its author-attributed outcomes are not a controlled estimate of intervention effectiveness and do not measure buildings intersecting burned areas."
+        }
+      ],
+      "key_statistics": [
+        {
+          "value": "31",
+          "unit": "temporary refuge areas",
+          "statistic_text": "Ad hoc temporary refuge areas used during the Camp Fire",
+          "measure": "Ad hoc temporary refuge areas used during the Camp Fire",
+          "reference_period": "2018 Camp Fire",
+          "geography": "Butte County, California",
+          "source_quote": "The ad hoc use of 31 temporary refuge areas saved at least 261 civilian lives",
+          "id": "preview-6-1-1-05-stat-1",
+          "source_url": "https://www.nist.gov/publications/lessons-learned-community-scale-use-temporary-refuge-areas-during-camp-fire",
+          "verification_status": "source_supported"
+        },
+        {
+          "value": "261",
+          "unit": "civilian lives (at least)",
+          "statistic_text": "Lives saved, attributed by the case-study authors",
+          "measure": "Lives saved, attributed by the case-study authors",
+          "reference_period": "2018 Camp Fire",
+          "geography": "Butte County, California",
+          "source_quote": "The ad hoc use of 31 temporary refuge areas saved at least 261 civilian lives",
+          "id": "preview-6-1-1-05-stat-2",
+          "source_url": "https://www.nist.gov/publications/lessons-learned-community-scale-use-temporary-refuge-areas-during-camp-fire",
+          "verification_status": "source_supported"
+        }
+      ]
+    },
+    {
+      "title": "EU wildfire strategy links prevention and preparedness to spatial planning",
+      "summary": "The Commission’s integrated wildfire approach covers prevention, preparedness, response and recovery. Its proposals include incorporating prevention and preparedness into spatial planning.",
+      "what_happened": null,
+      "where_happened": null,
+      "when_happened": null,
+      "who_published": "European Commission · Directorate-General for Communication",
+      "who_involved": [],
+      "who_affected": [],
+      "why_it_matters": null,
+      "why_relevant": "Supplies policy context for why planning authorities need building-exposure evidence and improved fire monitoring.",
+      "country": null,
+      "region": "European Union",
+      "organizations": [],
+      "evidence_type": "Policy or regulation",
+      "context_category": "Policies and regulations",
+      "case_study": null,
+      "source_type": "Government",
+      "publication_date": "2026-03-25",
+      "primary_source_url": "https://commission.europa.eu/news-and-media/news/modernising-our-approach-tackling-rising-wildfire-threat-2026-03-25_en",
+      "supporting_source_urls": [],
+      "supporting_passages": [
+        "proposing EU countries integrate wildfire prevention and preparedness into spatial planning"
+      ],
+      "missing_fields": [],
+      "id": "preview-6-1-1-04",
+      "indicator_id": "preview-6-1-1",
+      "publisher": "European Commission · Directorate-General for Communication",
+      "source_url": "https://commission.europa.eu/news-and-media/news/modernising-our-approach-tackling-rising-wildfire-threat-2026-03-25_en",
+      "source_access": "retrieved",
+      "quality_label": "A",
+      "review_status": "NEW",
+      "reviewer_id": null,
+      "reviewed_at": null,
+      "is_demo": false,
+      "category_inferred": false,
+      "duplicate_group": null,
+      "created_at": "2026-11-04T22:18:36.795113+00:00",
+      "model_version": "curated-source preview",
+      "prompt_version": "public-preview.v1",
+      "review_history": [],
+      "validation_warnings": [
+        {
+          "code": "PREVIEW",
+          "severity": "info",
+          "message": "Public-source preview snapshot. Human review is pending."
+        },
+        {
+          "code": "MEASUREMENT_BOUNDARY",
+          "severity": "warning",
+          "message": "This source describes a Commission strategy and proposed actions. It does not establish a mandatory building code or demonstrate implementation outcomes."
+        }
+      ],
+      "key_statistics": []
+    },
+    {
+      "title": "EFFIS records 1,079,538 hectares burned in the EU in 2025",
+      "summary": "JRC reports that the EU’s 2025 burned area was the largest in the EFFIS record since 2006. The release accompanies an advance regional fire-season assessment.",
+      "what_happened": null,
+      "where_happened": null,
+      "when_happened": null,
+      "who_published": "European Commission · Joint Research Centre",
+      "who_involved": [],
+      "who_affected": [],
+      "why_it_matters": null,
+      "why_relevant": "A documented annual burned-area context and candidate hazard source for 6.1.1; building intersections still require separate calculation.",
+      "country": null,
+      "region": "European Union",
+      "organizations": [],
+      "evidence_type": "Statistic or dataset",
+      "context_category": "Key statistics",
+      "case_study": null,
+      "source_type": "Government",
+      "publication_date": "2026-03-31",
+      "primary_source_url": "https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/2025-was-eus-most-destructive-wildfire-season-record-2026-03-31_en",
+      "supporting_source_urls": [],
+      "supporting_passages": [
+        "1 079 538 hectares"
+      ],
+      "missing_fields": [],
+      "id": "preview-6-1-1-03",
+      "indicator_id": "preview-6-1-1",
+      "publisher": "European Commission · Joint Research Centre",
+      "source_url": "https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/2025-was-eus-most-destructive-wildfire-season-record-2026-03-31_en",
+      "source_access": "retrieved",
+      "quality_label": "A",
+      "review_status": "NEW",
+      "reviewer_id": null,
+      "reviewed_at": null,
+      "is_demo": false,
+      "category_inferred": false,
+      "duplicate_group": null,
+      "created_at": "2026-11-04T22:18:36.795113+00:00",
+      "model_version": "curated-source preview",
+      "prompt_version": "public-preview.v1",
+      "review_history": [],
+      "validation_warnings": [
+        {
+          "code": "PREVIEW",
+          "severity": "info",
+          "message": "Public-source preview snapshot. Human review is pending."
+        },
+        {
+          "code": "MEASUREMENT_BOUNDARY",
+          "severity": "warning",
+          "message": "This is EU27 land area mapped as burned, not the number or percentage of buildings affected. The wider Europe, Middle East and North Africa total uses a different geographic denominator."
+        }
+      ],
+      "key_statistics": [
+        {
+          "value": "1 079 538",
+          "unit": "ha",
+          "statistic_text": "EFFIS mapped burned land area",
+          "measure": "EFFIS mapped burned land area",
+          "reference_period": "2025",
+          "geography": "European Union (EU27)",
+          "source_quote": "1 079 538 hectares",
+          "id": "preview-6-1-1-03-stat-1",
+          "source_url": "https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/2025-was-eus-most-destructive-wildfire-season-record-2026-03-31_en",
+          "verification_status": "source_supported"
+        }
+      ]
+    },
+    {
+      "title": "US study projects rising structural losses under a no-adaptation scenario",
+      "summary": "This study combines burned area, settlement patterns and structural vulnerability to project US fire losses through 2060 under business-as-usual conditions without adaptation.",
+      "what_happened": null,
+      "where_happened": null,
+      "when_happened": null,
+      "who_published": "Nature Communications · study authors",
+      "who_involved": [],
+      "who_affected": [],
+      "why_it_matters": null,
+      "why_relevant": "Provides a trend framework connecting fire hazard and the built environment. Its projected losses are separate from 6.1.1’s historical burned-area intersections.",
+      "country": "United States",
+      "region": "North America",
+      "organizations": [],
+      "evidence_type": "Trend",
+      "context_category": "Trends",
+      "case_study": null,
+      "source_type": "Academic",
+      "publication_date": "2026-11-03",
+      "primary_source_url": "https://www.nature.com/articles/s41467-026-78904-z",
+      "supporting_source_urls": [],
+      "supporting_passages": [
+        "133,200–449,100 buildings expected to be damaged or destroyed by mid-century."
+      ],
+      "missing_fields": [],
+      "id": "preview-6-1-1-02",
+      "indicator_id": "preview-6-1-1",
+      "publisher": "Nature Communications · study authors",
+      "source_url": "https://www.nature.com/articles/s41467-026-78904-z",
+      "source_access": "retrieved",
+      "quality_label": "B",
+      "review_status": "NEW",
+      "reviewer_id": null,
+      "reviewed_at": null,
+      "is_demo": false,
+      "category_inferred": false,
+      "duplicate_group": null,
+      "created_at": "2026-11-04T22:18:36.795113+00:00",
+      "model_version": "curated-source preview",
+      "prompt_version": "public-preview.v1",
+      "review_history": [],
+      "validation_warnings": [
+        {
+          "code": "PREVIEW",
+          "severity": "info",
+          "message": "Public-source preview snapshot. Human review is pending."
+        },
+        {
+          "code": "MEASUREMENT_BOUNDARY",
+          "severity": "warning",
+          "message": "Modelled damage or destruction is conditional on the study’s scenario and assumptions. It is not an observed building-exposure count, a global estimate or a validated Forge measurement."
+        }
+      ],
+      "key_statistics": [
+        {
+          "value": "133,200–449,100",
+          "unit": "structures",
+          "statistic_text": "Projected cumulative damaged or destroyed structures under business-as-usual conditions without adaptation",
+          "measure": "Projected cumulative damaged or destroyed structures under business-as-usual conditions without adaptation",
+          "reference_period": "2024–2060 projection",
+          "geography": "United States",
+          "source_quote": "133,200–449,100 buildings expected to be damaged or destroyed by mid-century.",
+          "id": "preview-6-1-1-02-stat-1",
+          "source_url": "https://www.nature.com/articles/s41467-026-78904-z",
+          "verification_status": "source_supported"
+        }
+      ]
+    },
+    {
+      "title": "EU wildfire update: burned area remains above the long-term average",
+      "summary": "JRC’s dated EFFIS update compares the 2026 fire season with 2025 and the 2006–2025 baseline. It provides mapped fire activity for prioritising further investigation.",
+      "what_happened": null,
+      "where_happened": null,
+      "when_happened": "Situation as of 7 October 2026; page updated 8 October 2026",
+      "who_published": "European Commission · Joint Research Centre",
+      "who_involved": [],
+      "who_affected": [],
+      "why_it_matters": null,
+      "why_relevant": "A recent hazard footprint context for 6.1.1; building records must be intersected separately to measure building exposure.",
+      "country": null,
+      "region": "European Union",
+      "organizations": [],
+      "evidence_type": "Other relevant context",
+      "context_category": "Recent developments",
+      "case_study": null,
+      "source_type": "Government",
+      "publication_date": null,
+      "primary_source_url": "https://joint-research-centre.ec.europa.eu/scientific-activities/natural-and-man-made-hazards/forest-fires/current-wildfire-situation-europe_en",
+      "supporting_source_urls": [],
+      "supporting_passages": [
+        "the area affected by fires has reached 692 419 hectares."
+      ],
+      "missing_fields": [
+        "publication_date"
+      ],
+      "id": "preview-6-1-1-01",
+      "indicator_id": "preview-6-1-1",
+      "publisher": "European Commission · Joint Research Centre",
+      "source_url": "https://joint-research-centre.ec.europa.eu/scientific-activities/natural-and-man-made-hazards/forest-fires/current-wildfire-situation-europe_en",
+      "source_access": "retrieved",
+      "quality_label": "D",
+      "review_status": "NEW",
+      "reviewer_id": null,
+      "reviewed_at": null,
+      "is_demo": false,
+      "category_inferred": false,
+      "duplicate_group": null,
+      "created_at": "2026-11-04T22:18:36.795113+00:00",
+      "model_version": "curated-source preview",
+      "prompt_version": "public-preview.v1",
+      "review_history": [],
+      "validation_warnings": [
+        {
+          "code": "PREVIEW",
+          "severity": "info",
+          "message": "Public-source preview snapshot. Human review is pending."
+        },
+        {
+          "code": "MEASUREMENT_BOUNDARY",
+          "severity": "warning",
+          "message": "The figures cover land area, not buildings. EFFIS maps fires around 30 hectares or larger and can include intentional vegetation-management burns. The page reports conditions on 7 October and an update on 8 October 2026; its original publication date is unknown."
+        }
+      ],
+      "key_statistics": []
+    }
+  ],
+  "run": {
+    "id": "preview-intake",
+    "mode": "curated",
+    "status": "COMPLETED",
+    "stage": "Saved curated sources",
+    "candidate_count": 8,
+    "relevant_count": 8,
+    "extracted_count": 8,
+    "approved_count": 0,
+    "duplicate_count": 0,
+    "generated_queries": [],
+    "started_at": "2026-11-04T22:18:36.795113+00:00",
+    "completed_at": "2026-11-04T22:18:36.795113+00:00",
+    "date_from": "2024-01-01",
+    "date_to": "2026-11-04",
+    "provider": "curated-primary-sources",
+    "error_message": null,
+    "warnings": [
+      "Bounded public-source preview; not an exhaustive search or a shared review workspace."
+    ]
+  }
+}
