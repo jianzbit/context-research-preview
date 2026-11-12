@@ -1,0 +1,21 @@
+export const STATUS = {completed:'With admitted records',no_evidence:'Insufficient evidence',error:'Call failed',not_submitted:'Not searched'};
+export const FIT = {direct_metric:'Direct metric',contextual_evidence:'Context',measurement_method:'Method',boundary_only:'Scope note',unclassified_early_pilot:'Early pilot'};
+export const TYPES = {news:'News',policy:'Policy & codes',data:'Data & research'};
+export function safeUrl(value){try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)&&!u.username&&!u.password?u.href:null;}catch{return null;}}
+export function numericId(id){return id==='ndc-adaptation'?[99]:id.split('.').map(Number);}
+export function compareIds(a,b){const x=numericId(a),y=numericId(b);for(let i=0;i<Math.max(x.length,y.length);i++){if(x[i]===undefined)return -1;if(y[i]===undefined)return 1;if(x[i]!==y[i])return x[i]-y[i];}return 0;}
+export function recent(record,window){if(!record.sourceDateReviewed||!/^\d{4}-\d{2}(-\d{2})?$/.test(record.sourceDate||''))return false;const low=record.sourceDate.length===7?record.sourceDate+'-01':record.sourceDate;const high=record.sourceDate.length===7?record.sourceDate+'-31':record.sourceDate;return low>=window.since&&high<=window.until;}
+export function matches(record,state,window){
+ if(state.indicator!=='all'&&record.indicatorId!==state.indicator)return false;
+ if(state.country!=='all'&&record.countryCode!==state.country)return false;
+ if(state.type!=='all'&&record.format!==state.type)return false;
+ if(state.date==='recent'&&!recent(record,window))return false;
+ if(state.date==='unknown'&&record.sourceDateReviewed)return false;
+ const query=(state.query||'').trim().toLowerCase();
+ return !query||[record.headline,record.statement,record.sourceTitle,record.publisher,record.countryCode,record.indicatorId,...record.figures.map(f=>f.label)].join(' ').toLowerCase().includes(query);
+}
+export function groups(data,state){const map=new Map();for(const r of data.records.filter(r=>matches(r,state,data.publicationWindow))){const key=r.sourceUrl+'|'+r.countryCode;if(!map.has(key))map.set(key,{key,url:r.sourceUrl,countryCode:r.countryCode,title:r.sourceTitle,format:r.format,records:[]});map.get(key).records.push(r);}return [...map.values()].sort((a,b)=>{const ad=a.records.map(r=>r.sourceDateReviewed&&/^\d{4}-/.test(r.sourceDate||'')?r.sourceDate:'').sort().at(-1)||'';const bd=b.records.map(r=>r.sourceDateReviewed&&/^\d{4}-/.test(r.sourceDate||'')?r.sourceDate:'').sort().at(-1)||'';return bd.localeCompare(ad)||a.title.localeCompare(b.title,'en');});}
+export function scopeCoverage(data,state){return data.coverage.filter(c=>(state.indicator==='all'||c.indicatorId===state.indicator)&&(state.country==='all'||c.countryCode===state.country));}
+export function coverageRows(data,state){const names=new Map(data.countries.map(c=>[c.code,c.name]));const ids=new Map(data.indicators.map(i=>[i.id,i.name]));const query=(state.query||'').trim().toLowerCase();return scopeCoverage(data,state).filter(c=>(state.status==='all'||(state.status==='attempted'?c.status!=='not_submitted':c.status===state.status))&&(!query||[c.indicatorId,c.countryCode,names.get(c.countryCode),ids.get(c.indicatorId),STATUS[c.status]].join(' ').toLowerCase().includes(query))).sort((a,b)=>compareIds(a.indicatorId,b.indicatorId)||a.countryCode.localeCompare(b.countryCode));}
+export function recordsForGroup(data,state,key){return groups(data,state).find(g=>g.key===key);}
+export function csv(records){const headers=['record_id','indicator_id','country','source_title','headline','statement','source_url','source_date','date_reviewed','data_period','claim_type','indicator_fit','figures','excerpt','excerpt_kind','limitations','source_sha256','locator'];const quote=value=>{let s=String(value??'');if(/^[\s]*[=+@-]/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';};return '\ufeff'+[headers.map(quote).join(','),...records.map(r=>[r.recordId,r.indicatorId,r.countryCode,r.sourceTitle,r.headline,r.statement,r.sourceUrl,r.sourceDate,r.sourceDateReviewed,r.period,r.claimType,r.indicatorFit,JSON.stringify(r.figures),r.excerpt,r.excerptKind,JSON.stringify(r.limitations),r.sourceSha256,r.locator].map(quote).join(','))].join('\r\n');}

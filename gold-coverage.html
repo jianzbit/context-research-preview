@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse news, policies, datasets and research by Gold indicator and country, with source dates and evidence boundaries.">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Gold Source Explorer | Research Preview</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#results">Skip to results</a>
+  <header class="site-header" id="site-header">
+    <a class="brand" href="./" aria-label="Gold Source Explorer home"><span class="brand-mark" aria-hidden="true">g</span>gold<span class="brand-divider"></span><span class="brand-section">Independent research preview</span></a>
+    <div class="header-meta"><span class="status-dot"></span> Search snapshot <span id="snapshot-date">11 Nov 2026</span></div>
+  </header>
+  <div class="app-layout">
+    <aside class="sidebar" aria-label="Indicator navigation">
+      <div class="sidebar-heading"><span class="eyebrow">Gold collection</span><span class="outline-badge">25 + 1 topic</span></div>
+      <button class="indicator-button all-indicators active" data-indicator="all" aria-pressed="true"><span class="all-icon" aria-hidden="true">▦</span><span>All indicators</span><span class="indicator-count">11</span></button>
+      <div id="indicator-navigation"></div>
+      <div class="sidebar-footer"><span class="small-dot"></span> Evidence, with its boundaries.<p>Source links, data periods and screening status are retained.</p></div>
+    </aside>
+    <main id="main">
+      <section class="intro">
+        <div><div class="eyebrow"><span class="gold-dot"></span> Independent preview / source library</div><h1>Gold indicator sources</h1><p>Explore news, policy documents, datasets and research across indicators and countries.</p></div>
+        <div class="intro-actions"><button class="button" id="copy-view" type="button"><span aria-hidden="true">↗</span> Copy view link</button><button class="button primary" id="export" type="button"><span aria-hidden="true">↓</span> Export results</button></div>
+      </section>
+      <section class="metrics" aria-label="Selected-scope summary">
+        <div><span class="metric-label">Sources in this view</span><strong id="metric-sources">—</strong><small>Grouped by original source</small></div>
+        <div><span class="metric-label">Evidence records</span><strong id="metric-records">—</strong><small>Candidate excerpts and claims</small></div>
+        <div><span class="metric-label">Countries attempted</span><strong id="metric-countries">—</strong><small>In the selected indicator scope</small></div>
+        <div><span class="metric-label">Coverage pairs attempted</span><strong id="metric-coverage">—</strong><small>Indicator × country combinations</small></div>
+      </section>
+      <section class="filter-panel" aria-label="Source filters">
+        <div class="filter-grid">
+          <label for="indicator">Indicator<select id="indicator"><option value="all">All indicators</option></select></label>
+          <label for="country">Country<select id="country"><option value="all">All countries</option></select></label>
+          <label for="search" class="search-field">Search<div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Headline, source or keyword…" autocomplete="off"></div></label>
+          <button class="reset-button" id="reset" type="button">Reset filters</button>
+        </div>
+        <div class="filter-bottom" id="source-controls">
+          <div class="type-tabs" role="group" aria-label="Source type">
+            <button class="type-tab active" data-type="all" aria-pressed="true">All types <span></span></button>
+            <button class="type-tab" data-type="news" aria-pressed="false">News <span></span></button>
+            <button class="type-tab" data-type="policy" aria-pressed="false">Policy & codes <span></span></button>
+            <button class="type-tab" data-type="data" aria-pressed="false">Data & research <span></span></button>
+          </div>
+          <label class="date-label" for="source-date">Source date<select id="source-date"><option value="all">Any source date</option><option value="recent">Within requested window</option><option value="unknown">Date not confirmed</option></select></label>
+        </div>
+      </section>
+      <div class="snapshot-note"><span aria-hidden="true">ⓘ</span><span>Snapshot: <strong>11 November 2026</strong>. Source publication dates and observation years are shown separately. This is exploratory evidence.</span></div>
+      <section id="results" tabindex="-1">
+        <div class="results-heading"><div><h2 id="results-title">All sources</h2><p id="results-subtitle" aria-live="polite"></p></div><div class="view-switch" role="group" aria-label="View"><button data-view="sources" class="active" aria-pressed="true">Sources</button><button data-view="coverage" aria-pressed="false">Coverage</button></div></div>
+        <div id="coverage-controls" class="coverage-controls" hidden><label for="coverage-status">Status<select id="coverage-status"><option value="attempted">Attempted pairs</option><option value="all">All pairs</option><option value="completed">With admitted records</option><option value="no_evidence">Insufficient evidence</option><option value="error">Call failed</option><option value="not_submitted">Not searched</option></select></label><span>Empty results do not establish an absence of source evidence.</span></div>
+        <div id="result-list" class="source-grid"></div>
+        <div id="pagination" class="pagination" hidden><button class="button" id="previous-page">← Previous</button><span id="page-label"></span><button class="button" id="next-page">Next →</button></div>
+      </section>
+      <footer class="main-footer"><span>Independent research preview</span><span>195-country roster · 25 indicators + NDC adaptation</span><a href="./">Evidence Hub ↗</a></footer>
+    </main>
+  </div>
+  <dialog id="source-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span class="eyebrow">Source evidence</span><button class="icon-button" id="close-dialog" aria-label="Close source details">×</button></div><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <noscript><p>This source browser needs JavaScript to filter the local search snapshot.</p></noscript>
+</body>
+</html>
